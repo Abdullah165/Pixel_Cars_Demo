@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 21b826b37d463dc4fb7f96ea093d7726
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2013868262471135758
+    second: train_a_carriage_24px_16way_1pxo_0
+  - first:
+      213: 8760335820066075167
+    second: train_a_carriage_24px_16way_1pxo_1
+  - first:
+      213: -1059571819187680481
+    second: train_a_carriage_24px_16way_1pxo_2
+  - first:
+      213: 4424449227807820531
+    second: train_a_carriage_24px_16way_1pxo_3
+  - first:
+      213: -8985783538805261109
+    second: train_a_carriage_24px_16way_1pxo_4
+  - first:
+      213: 5717717050371682147
+    second: train_a_carriage_24px_16way_1pxo_5
+  - first:
+      213: 3234893150746004256
+    second: train_a_carriage_24px_16way_1pxo_6
+  - first:
+      213: 8799528079976410250
+    second: train_a_carriage_24px_16way_1pxo_7
+  - first:
+      213: 6210714471575234960
+    second: train_a_carriage_24px_16way_1pxo_8
+  - first:
+      213: 2312599283137879588
+    second: train_a_carriage_24px_16way_1pxo_9
+  - first:
+      213: 2259440205092066054
+    second: train_a_carriage_24px_16way_1pxo_10
+  - first:
+      213: -321919100405540184
+    second: train_a_carriage_24px_16way_1pxo_11
+  - first:
+      213: -3140808674115514317
+    second: train_a_carriage_24px_16way_1pxo_12
+  - first:
+      213: -5081450060348369298
+    second: train_a_carriage_24px_16way_1pxo_13
+  - first:
+      213: -3384440798359971490
+    second: train_a_carriage_24px_16way_1pxo_14
+  - first:
+      213: -3884381851653966258
+    second: train_a_carriage_24px_16way_1pxo_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e027609c382b2fb10800000000000000
+      internalID: 2013868262471135758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f123b2c9307f29970800000000000000
+      internalID: 8760335820066075167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bcd475b05ab41f0800000000000000
+      internalID: -1059571819187680481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa8c36812dc66d30800000000000000
+      internalID: 4424449227807820531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccb5fcea751c4380800000000000000
+      internalID: -8985783538805261109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f29911d59695f40800000000000000
+      internalID: 5717717050371682147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b4f807e26a4ec20800000000000000
+      internalID: 3234893150746004256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_7
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ca116ba243e1a70800000000000000
+      internalID: 8799528079976410250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 099ae97f7e3e03650800000000000000
+      internalID: 6210714471575234960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_9
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e914b9bc0081020800000000000000
+      internalID: 2312599283137879588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_10
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6039fbf35e42b5f10800000000000000
+      internalID: 2259440205092066054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa1ae5a840588bf0800000000000000
+      internalID: -321919100405540184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33011efc62b9964d0800000000000000
+      internalID: -3140808674115514317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_13
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e665c01c7101b79b0800000000000000
+      internalID: -5081450060348369298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_14
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e591a62860d0801d0800000000000000
+      internalID: -3384440798359971490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: train_a_carriage_24px_16way_1pxo_15
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 0
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e46f0384947e71ac0800000000000000
+      internalID: -3884381851653966258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      train_a_carriage_24px_16way_1pxo_0: 2013868262471135758
+      train_a_carriage_24px_16way_1pxo_1: 8760335820066075167
+      train_a_carriage_24px_16way_1pxo_10: 2259440205092066054
+      train_a_carriage_24px_16way_1pxo_11: -321919100405540184
+      train_a_carriage_24px_16way_1pxo_12: -3140808674115514317
+      train_a_carriage_24px_16way_1pxo_13: -5081450060348369298
+      train_a_carriage_24px_16way_1pxo_14: -3384440798359971490
+      train_a_carriage_24px_16way_1pxo_15: -3884381851653966258
+      train_a_carriage_24px_16way_1pxo_2: -1059571819187680481
+      train_a_carriage_24px_16way_1pxo_3: 4424449227807820531
+      train_a_carriage_24px_16way_1pxo_4: -8985783538805261109
+      train_a_carriage_24px_16way_1pxo_5: 5717717050371682147
+      train_a_carriage_24px_16way_1pxo_6: 3234893150746004256
+      train_a_carriage_24px_16way_1pxo_7: 8799528079976410250
+      train_a_carriage_24px_16way_1pxo_8: 6210714471575234960
+      train_a_carriage_24px_16way_1pxo_9: 2312599283137879588
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
