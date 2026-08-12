@@ -482,8 +482,8 @@ MonoBehaviour:
     - {fileID: 3138532511914896622, guid: 3f8303a734c80374587be995aee4a9f9, type: 3}
     - {fileID: 3138532511914896622, guid: c5bf1b21f29884043bffe9ea641136d2, type: 3}
     xPositions:
-    - -1.4
-    - 1.4
+    - -1.45
+    - 1.45
     spawnProbability: 0.4
   - trackName: Outer Trees
     prefabs:
@@ -495,9 +495,16 @@ MonoBehaviour:
     - {fileID: 4266593965250730357, guid: 687c9e081bb1fcc4fb9ec0848f25e628, type: 3}
     - {fileID: 7693841548345742948, guid: d24e73d657ea72d47ac8b87a402caf50, type: 3}
     xPositions:
-    - -2.2
-    - 2.2
+    - -2.3
+    - 2.3
     spawnProbability: 0.7
+  - trackName: Passengers
+    prefabs:
+    - {fileID: 2426142775985766437, guid: bd7096434bc2261409f38b94d481465f, type: 3}
+    xPositions:
+    - -1.15
+    - 1.15
+    spawnProbability: 0.3
   spawnInterval: 0.8
   screenBottomY: -7
   sceneryMoveSpeed: 2
