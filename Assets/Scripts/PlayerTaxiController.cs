@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Controls the taxi with four swipe directions. Left/right change lane; up/down
@@ -28,6 +30,10 @@ public class PlayerTaxiController : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private UnityEvent onCrash;
+
+    [Header("Crash Restart")]
+    [Tooltip("Real-time delay before the frozen level restarts.")]
+    [Min(0f)] [SerializeField] private float restartDelay = 2f;
 
     private int currentLane;
     private float targetY;
@@ -110,6 +116,17 @@ public class PlayerTaxiController : MonoBehaviour
         crashed = true;
         onCrash?.Invoke();
         Debug.Log("Taxi crashed into traffic.", this);
+        Time.timeScale = 0f;
+        StartCoroutine(RestartSceneAfterCrash());
+    }
+
+    private IEnumerator RestartSceneAfterCrash()
+    {
+        yield return new WaitForSecondsRealtime(restartDelay);
+
+        // WaitForSecondsRealtime keeps this timer running while timeScale is 0.
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void ReadSwipeInput()
