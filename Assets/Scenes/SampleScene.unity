@@ -509,6 +509,52 @@ MonoBehaviour:
   screenBottomY: -7
   sceneryMoveSpeed: 2
   poolSizePerPrefab: 10
+--- !u!1 &1169754301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1169754302}
+  - component: {fileID: 1169754303}
+  m_Layer: 0
+  m_Name: TaxiGameBootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1169754302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169754301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1169754303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169754301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f60e4e9fa2422d9437b71ca5b30ee1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::TaxiGameBootstrap
+  playerTaxiPrefab: {fileID: 5812902651227979041, guid: 90ea07b6f5464b33819a270476258044, type: 3}
+  playerStartPosition: {x: -0.35, y: -3.4}
 --- !u!1 &1586177700
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,12 +788,31 @@ MonoBehaviour:
   - {fileID: 4871458979156403898, guid: 53e37e4872d5d8d4fa7400936c518b77, type: 3}
   - {fileID: 4871458979156403898, guid: ff3e88efa3baa354fb04cd505d53de39, type: 3}
   - {fileID: 4871458979156403898, guid: 441c2b34957f6ba4db973bf6b9daa960, type: 3}
-  spawnInterval: 0.8
+  difficulty: 1
+  easy:
+    trafficSpeed: 2.25
+    requestedRowInterval: 1.5
+    inputReactionTime: 0.35
+    minimumRowWorldGap: 3.4
+    minimumSpawnLeadTime: 1.75
+  medium:
+    trafficSpeed: 3
+    requestedRowInterval: 1.1
+    inputReactionTime: 0.25
+    minimumRowWorldGap: 3
+    minimumSpawnLeadTime: 1.3
+  hard:
+    trafficSpeed: 3.8
+    requestedRowInterval: 0.78
+    inputReactionTime: 0.18
+    minimumRowWorldGap: 2.9
+    minimumSpawnLeadTime: 0.95
   laneXPositions:
-  - -0.7
-  - 0
-  - 0.7
-  poolSizePerPrefab: 5
+  - -0.35
+  - 0.35
+  contactSafetyBuffer: 0.35
+  despawnYLocation: -6.5
+  poolSizePerPrefab: 6
 --- !u!1 &2053791433
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,3 +873,4 @@ SceneRoots:
   - {fileID: 2053791435}
   - {fileID: 1960763251}
   - {fileID: 865516828}
+  - {fileID: 1169754302}
