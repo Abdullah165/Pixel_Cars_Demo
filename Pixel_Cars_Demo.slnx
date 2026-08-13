@@ -1,3 +1,6 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="CW.Common.csproj" />
+  <Project Path="LeanCommon.csproj" />
+  <Project Path="LeanPool.csproj" />
 </Solution>

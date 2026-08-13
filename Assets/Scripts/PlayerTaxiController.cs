@@ -53,6 +53,19 @@ public class PlayerTaxiController : MonoBehaviour
     public float MaximumManeuverDistance => maneuverDistance;
     public bool IsBraking => GameSpeedController.IsBrakeHeld;
     public bool IsStopped => GameSpeedController.IsStopped;
+    public int PassengerCount { get; private set; }
+
+    public void AddPassenger(int amount = 1)
+    {
+        PassengerCount += Mathf.Max(0, amount);
+    }
+
+    public int DropOffAllPassengers()
+    {
+        int passengersToDropOff = PassengerCount;
+        PassengerCount = 0;
+        return passengersToDropOff;
+    }
     public float LaneChangeDuration
     {
         get

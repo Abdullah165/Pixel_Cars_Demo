@@ -42,13 +42,14 @@ public class FareManager : MonoBehaviour
             return;
         }
 
+        if (GameSpeedController.IsWorldStopped)
+        {
+            return;
+        }
+
         destinationMarker.transform.Translate(Vector3.down * destinationScrollSpeed * Time.deltaTime, Space.World);
 
-        if (playerTaxi.IsStopped && IsAtCurb(destinationMarker.transform.position))
-        {
-            CompleteFare();
-        }
-        else if (destinationMarker.transform.position.y < -6.5f)
+        if (destinationMarker.transform.position.y < -6.5f)
         {
             // A missed stop simply returns to the next passenger opportunity.
             CancelFare();
@@ -57,12 +58,19 @@ public class FareManager : MonoBehaviour
 
     public bool TryPickUp(PassengerBehavior passenger, PlayerTaxiController taxi)
     {
-        if (passengerOnBoard || Time.time < nextFareAvailableTime || taxi == null || !taxi.IsStopped || !IsAtCurb(passenger.transform.position))
+        if (taxi == null)
+        {
+            return false;
+        }
+
+        playerTaxi = taxi;
+        if (passengerOnBoard || Time.time < nextFareAvailableTime || !taxi.IsStopped || !IsAtCurb(passenger.transform.position))
         {
             return false;
         }
 
         passengerOnBoard = true;
+        taxi.AddPassenger();
         passenger.ReturnToSpawnPool();
         SpawnDestination(passenger.transform.position.x);
         return true;
@@ -87,8 +95,9 @@ public class FareManager : MonoBehaviour
         destinationMarker.SetActive(true);
     }
 
-    private void CompleteFare()
+    public void CompleteFareFromDropOff()
     {
+        if (!passengerOnBoard) return;
         passengerOnBoard = false;
         faresCompleted++;
         nextFareAvailableTime = Time.time + fareCooldown;
@@ -97,6 +106,7 @@ public class FareManager : MonoBehaviour
 
     private void CancelFare()
     {
+        playerTaxi?.DropOffAllPassengers();
         passengerOnBoard = false;
         nextFareAvailableTime = Time.time + fareCooldown;
         destinationMarker.SetActive(false);
@@ -114,6 +124,10 @@ public class FareManager : MonoBehaviour
         destinationText.characterSize = 0.055f;
         destinationText.color = new Color(1f, 0.8f, 0.05f);
         destinationText.GetComponent<MeshRenderer>().sortingOrder = 4;
+        BoxCollider2D collider = destinationMarker.AddComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+        collider.size = new Vector2(1.4f, 0.9f);
+        destinationMarker.AddComponent<DropOffZone>();
         destinationMarker.SetActive(false);
     }
 }

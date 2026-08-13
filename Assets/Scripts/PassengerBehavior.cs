@@ -38,29 +38,34 @@ public class PassengerBehavior : MonoBehaviour
 
     private void Update()
     {
+        bool worldStopped = GameSpeedController.IsWorldStopped;
+
         if (playerTaxi == null)
         {
             playerTaxi = FindFirstObjectByType<PlayerTaxiController>();
             fareManager = FindFirstObjectByType<FareManager>();
         }
 
-        float currentSpeed = sceneryScrollSpeed;
-        if (currentState == PassengerState.Walking)
+        if (!worldStopped)
         {
-            currentSpeed -= walkSpeed;
-            stateTimer += Time.deltaTime;
-
-            if (stateTimer >= walkDuration)
+            float currentSpeed = sceneryScrollSpeed;
+            if (currentState == PassengerState.Walking)
             {
-                currentState = PassengerState.Waiting;
-                if (animator != null)
+                currentSpeed -= walkSpeed;
+                stateTimer += Time.deltaTime;
+
+                if (stateTimer >= walkDuration)
                 {
-                    animator.SetBool("isWalking", false);
+                    currentState = PassengerState.Waiting;
+                    if (animator != null)
+                    {
+                        animator.SetBool("isWalking", false);
+                    }
                 }
             }
-        }
 
-        transform.Translate(Vector3.down * currentSpeed * Time.deltaTime, Space.World);
+            transform.Translate(Vector3.down * currentSpeed * Time.deltaTime, Space.World);
+        }
 
         if (currentState == PassengerState.Waiting && fareManager != null && playerTaxi != null)
         {

@@ -47,6 +47,11 @@ public class VehicleBehavior : MonoBehaviour
 
     private void Update()
     {
+        // Scenery prefabs share this mover with traffic cars, but only scenery pauses.
+        if (GameSpeedController.IsWorldStopped && GetComponentInParent<ScenerySpawner>() != null)
+        {
+            return;
+        }
         // A faster car may only cover the space above the safe gap to the closest
         // car ahead in its lane. This makes overtaking traffic impossible without
         // relying on collision callbacks or frame-order luck.

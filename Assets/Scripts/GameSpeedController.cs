@@ -23,6 +23,8 @@ public class GameSpeedController : MonoBehaviour
     public static float CurrentTaxiSpeed => instance != null ? instance.currentTaxiSpeed : 1f;
     public static float NormalizedTaxiSpeed => instance == null || instance.maxTaxiSpeed <= 0f ? 1f : instance.currentTaxiSpeed / instance.maxTaxiSpeed;
     public static bool IsStopped => instance != null && instance.currentTaxiSpeed <= instance.stoppedSpeedThreshold;
+    // Gameplay scenery and passenger movement pause only after the taxi has fully stopped.
+    public static bool IsWorldStopped => IsStopped;
 
     private void Awake()
     {

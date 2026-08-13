@@ -12,6 +12,11 @@ public class RoadScroller : MonoBehaviour
 
     void Update()
     {
+        if (GameSpeedController.IsWorldStopped)
+        {
+            return;
+        }
+
         // Move both road parts down
         road1.Translate(Vector3.down * scrollSpeed * Time.deltaTime);
         road2.Translate(Vector3.down * scrollSpeed * Time.deltaTime);

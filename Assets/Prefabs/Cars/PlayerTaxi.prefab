@@ -52,6 +52,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ac4c084bd6d45f3936daf10e5194103, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTaxiController
   laneXPositions:
   - -0.35
@@ -187,7 +188,10 @@ MonoBehaviour:
   maneuverSpeed: 5
   minimumY: -4.6
   maximumY: -1.8
+  maximumBrakeDrift: 0.25
+  brakePositionResponse: 4
   minimumSwipePixels: 48
   onCrash:
     m_PersistentCalls:
       m_Calls: []
+  restartDelay: 2
