@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PassengerBehavior
   sceneryScrollSpeed: 2
   walkSpeed: 1.5
-  walkDuration: 4
+  walkDuration: 1.2
   despawnYLocation: -6
 --- !u!95 &5824753040012809926
 Animator:

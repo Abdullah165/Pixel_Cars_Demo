@@ -1,62 +1,58 @@
 using UnityEngine;
 
-public enum PassengerState 
-{ 
-    Walking, 
-    Waiting, 
-    PickedUp 
+public enum PassengerState
+{
+    Walking,
+    Waiting
 }
 
+/// <summary>A pooled pedestrian who can be collected only while the taxi is braking at the curb.</summary>
 public class PassengerBehavior : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float sceneryScrollSpeed = 5f; 
-    public float walkSpeed = 1.5f; 
-    public float walkDuration = 2f; 
-    public float despawnYLocation = -10f;
+    [SerializeField] private float sceneryScrollSpeed = 2f;
+    [SerializeField] private float walkSpeed = 1.5f;
+    [SerializeField] private float walkDuration = 4f;
+    [SerializeField] private float despawnYLocation = -6f;
 
     private PassengerState currentState;
     private float stateTimer;
     private Animator animator;
+    private PlayerTaxiController playerTaxi;
+    private FareManager fareManager;
 
-    void Awake()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    // OnEnable runs the moment the passenger is spawned by your object pool
-    void OnEnable()
+    private void OnEnable()
     {
         currentState = PassengerState.Walking;
         stateTimer = 0f;
-        
-        // 1. AUTOMATICALLY start the Walking animation
         if (animator != null)
         {
             animator.SetBool("isWalking", true);
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if (currentState == PassengerState.PickedUp) return;
+        if (playerTaxi == null)
+        {
+            playerTaxi = FindFirstObjectByType<PlayerTaxiController>();
+            fareManager = FindFirstObjectByType<FareManager>();
+        }
 
         float currentSpeed = sceneryScrollSpeed;
-
         if (currentState == PassengerState.Walking)
         {
-            // Subtract walk speed so they walk down the screen slower than the trees
-            currentSpeed -= walkSpeed; 
-            
+            currentSpeed -= walkSpeed;
             stateTimer += Time.deltaTime;
-            
-            // When the walk duration timer finishes...
+
             if (stateTimer >= walkDuration)
             {
-                // Switch the internal state
                 currentState = PassengerState.Waiting;
-                
-                // 2. AUTOMATICALLY switch to the Waiting animation
                 if (animator != null)
                 {
                     animator.SetBool("isWalking", false);
@@ -64,27 +60,21 @@ public class PassengerBehavior : MonoBehaviour
             }
         }
 
-        // Move the passenger downward
-        transform.Translate(Vector3.down * currentSpeed * Time.deltaTime);
+        transform.Translate(Vector3.down * currentSpeed * Time.deltaTime, Space.World);
 
-        // Despawn and return to the pool when they go off the bottom of the screen
+        if (currentState == PassengerState.Waiting && fareManager != null && playerTaxi != null)
+        {
+            fareManager.TryPickUp(this, playerTaxi);
+        }
+
         if (transform.position.y < despawnYLocation)
         {
-            gameObject.SetActive(false);
+            ReturnToSpawnPool();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void ReturnToSpawnPool()
     {
-        if (other.CompareTag("Player") && currentState == PassengerState.Waiting)
-        {
-            HandlePickup();
-        }
-    }
-
-    void HandlePickup()
-    {
-        currentState = PassengerState.PickedUp;
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
     }
 }

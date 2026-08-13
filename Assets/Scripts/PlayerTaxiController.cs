@@ -25,6 +25,12 @@ public class PlayerTaxiController : MonoBehaviour
     [SerializeField] private float minimumY = -4.6f;
     [SerializeField] private float maximumY = -1.8f;
 
+    [Header("Brake Movement")]
+    [Tooltip("How far the taxi visibly rolls back on screen when it reaches a full stop. Traffic continues at its normal speed.")]
+    [Min(0f)] [SerializeField] private float maximumBrakeDrift = 1.2f;
+    [Tooltip("How quickly the taxi moves toward its speed-derived screen position.")]
+    [Min(0.1f)] [SerializeField] private float brakePositionResponse = 4f;
+
     [Header("Swipe")]
     [SerializeField] private float minimumSwipePixels = 48f;
 
@@ -40,10 +46,13 @@ public class PlayerTaxiController : MonoBehaviour
     private Vector2 swipeStart;
     private bool swipeInProgress;
     private bool crashed;
+    private bool brakeInput;
 
     public int CurrentLane => currentLane;
     public float LaneChangeSpeed => laneChangeSpeed;
     public float MaximumManeuverDistance => maneuverDistance;
+    public bool IsBraking => GameSpeedController.IsBrakeHeld;
+    public bool IsStopped => GameSpeedController.IsStopped;
     public float LaneChangeDuration
     {
         get
@@ -82,7 +91,13 @@ public class PlayerTaxiController : MonoBehaviour
 
         Vector3 position = transform.position;
         position.x = Mathf.MoveTowards(position.x, laneXPositions[currentLane], laneChangeSpeed * Time.deltaTime);
-        position.y = Mathf.MoveTowards(position.y, targetY, maneuverSpeed * Time.deltaTime);
+        // The taxi's speed is represented in world space by its position on the
+        // screen: at a full stop it rolls backward, while traffic keeps coming.
+        // Releasing the brake moves it back to the driving position.
+        float brakeOffset = (1f - GameSpeedController.NormalizedTaxiSpeed) * maximumBrakeDrift;
+        float speedAdjustedTargetY = Mathf.Max(minimumY, targetY - brakeOffset);
+        float verticalResponse = Mathf.Max(maneuverSpeed, brakePositionResponse);
+        position.y = Mathf.MoveTowards(position.y, speedAdjustedTargetY, verticalResponse * Time.deltaTime);
         transform.position = position;
     }
 
@@ -106,6 +121,17 @@ public class PlayerTaxiController : MonoBehaviour
         targetY = Mathf.Max(minimumY, targetY - maneuverDistance);
     }
 
+    public void SetBrakeInput(bool isBraking)
+    {
+        if (crashed)
+        {
+            return;
+        }
+
+        brakeInput = isBraking;
+        GameSpeedController.SetBrakeHeld(brakeInput);
+    }
+
     public void Crash()
     {
         if (crashed)
@@ -114,6 +140,8 @@ public class PlayerTaxiController : MonoBehaviour
         }
 
         crashed = true;
+        brakeInput = false;
+        GameSpeedController.SetBrakeHeld(false);
         onCrash?.Invoke();
         Debug.Log("Taxi crashed into traffic.", this);
         Time.timeScale = 0f;
@@ -178,6 +206,8 @@ public class PlayerTaxiController : MonoBehaviour
         if (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame) ChangeLaneRight();
         if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame) Overtake();
         if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame) Undertake();
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) SetBrakeInput(true);
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame) SetBrakeInput(false);
     }
 
     private void ProcessSwipe(Vector2 swipe)

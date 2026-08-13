@@ -78,6 +78,7 @@ public class TrafficSpawner : MonoBehaviour
     private LeanGameObjectPool[] pools;
     private PlayerTaxiController playerTaxi;
     private float nextSpawnTime;
+    private float trafficTimeline;
 
     /// <summary>Read-only lane data used by the player taxi to stay on this road.</summary>
     public float[] LaneXPositions => laneXPositions;
@@ -98,12 +99,13 @@ public class TrafficSpawner : MonoBehaviour
     private void Awake()
     {
         CreatePools();
-        nextSpawnTime = Time.time + 0.25f;
+        nextSpawnTime = 0.25f;
     }
 
     private void Update()
     {
-        if (Time.time < nextSpawnTime)
+        trafficTimeline += Time.deltaTime;
+        if (trafficTimeline < nextSpawnTime)
         {
             return;
         }
@@ -112,12 +114,12 @@ public class TrafficSpawner : MonoBehaviour
         {
             // This interval is derived from the actual taxi controls, not a
             // random density value. It is the minimum time between decisions.
-            nextSpawnTime = Time.time + GetGuaranteedRowInterval();
+            nextSpawnTime = trafficTimeline + GetGuaranteedRowInterval();
         }
         else
         {
             // Waiting for a valid lead window is safe; forcing a row is not.
-            nextSpawnTime = Time.time + 0.1f;
+            nextSpawnTime = trafficTimeline + 0.1f;
         }
     }
 

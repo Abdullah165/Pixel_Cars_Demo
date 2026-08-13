@@ -519,6 +519,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1169754302}
   - component: {fileID: 1169754303}
+  - component: {fileID: 1169754306}
+  - component: {fileID: 1169754305}
+  - component: {fileID: 1169754304}
   m_Layer: 0
   m_Name: TaxiGameBootstrap
   m_TagString: Untagged
@@ -555,6 +558,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TaxiGameBootstrap
   playerTaxiPrefab: {fileID: 5812902651227979041, guid: 90ea07b6f5464b33819a270476258044, type: 3}
   playerStartPosition: {x: -0.35, y: -2}
+--- !u!114 &1169754304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169754301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3280ab4598d44c0ebce5e4e6524c6796, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::TaxiGameUI
+--- !u!114 &1169754305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169754301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd2fe7f3bf940bdb75a0196baf1b9d7, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::FareManager
+  curbReach: 1
+  stopVerticalReach: 0.45
+  destinationSpawnY: 6.2
+  destinationScrollSpeed: 2
+  fareCooldown: 1.25
+--- !u!114 &1169754306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169754301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c9949de9971442b818e3bf8cc2c9391, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::GameSpeedController
+  maxTaxiSpeed: 1
+  brakeDeceleration: 1.5
+  acceleration: 1.2
+  stoppedSpeedThreshold: 0.02
 --- !u!1 &1586177700
 GameObject:
   m_ObjectHideFlags: 0
